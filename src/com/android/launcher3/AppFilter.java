@@ -15,6 +15,7 @@ public abstract class AppFilter {
         if (TextUtils.isEmpty(className)) return null;
         if (DBG) Log.d(TAG, "Loading AppFilter: " + className);
         try {
+			
             Class<?> cls = Class.forName(className);
             return (AppFilter) cls.newInstance();
         } catch (ClassNotFoundException e) {
